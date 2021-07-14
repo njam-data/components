@@ -5,7 +5,8 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
-    "package": "svelte-kit package"
+    "package": "svelte-kit package",
+    "pub": "npm publish package/"
   },
   "devDependencies": {
     "@sveltejs/kit": "next",

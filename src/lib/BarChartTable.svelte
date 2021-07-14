@@ -14,6 +14,7 @@
     bottom: 10,
     left: 60
   }
+  export let formatter
 
   let chartElement
 
@@ -22,6 +23,12 @@
     const { scaleLinear, scaleBand } = await import('d3-scale')
     const { axisLeft } = await import('d3-axis')
     const { format } = await import('d3-format')
+
+    if (!formatter) {
+      formatter = function (d) {
+        return format('.0%')(d)
+      }
+    }
 
     const svg = select(chartElement)
       .append('g')
@@ -174,10 +181,6 @@
         .attr('dy', '0.3em')
     }
 
-    function formatLabel (d) {
-      return format('.0f')(d * 100)
-    }
-
     columns.append('g')
       .attr('class', 'labels')
       .selectAll('.label')
@@ -190,7 +193,7 @@
       .attr('font-size', '12')
       .attr('class', 'label')
       .text((d) => {
-        return formatLabel(x(d))
+        return formatter(x(d))
       })
       .each(positionLabel)
   })

@@ -1,5 +1,5 @@
 <script>
-  import BarChartTable from '@njam-data/components/BarChartTable.svelte'
+  import BarChartTable from '$lib/BarChartTable.svelte'
 
   const data = [
     {
