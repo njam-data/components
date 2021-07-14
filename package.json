@@ -1,0 +1,22 @@
+{
+  "name": "@njam-data/components",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "package": "svelte-kit package"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "svelte": "^3.34.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "d3-axis": "^3.0.0",
+    "d3-format": "^3.0.1",
+    "d3-scale": "^4.0.0",
+    "d3-selection": "^3.0.0",
+    "svelte2tsx": "^0.4.1"
+  }
+}
