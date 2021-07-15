@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, afterUpdate, tick } from 'svelte'
 
   export let data
   export let columnHeaders = null
@@ -19,7 +19,17 @@
   let chartElement
 
   onMount(async () => {
-    const { select } = await import('d3-selection')
+    await tick()
+    await buildVisualization()
+  })
+
+  afterUpdate(async () => {
+    await tick()
+    await buildVisualization()
+  })
+
+  async function buildVisualization () {
+    const { select, selectAll } = await import('d3-selection')
     const { scaleLinear, scaleBand } = await import('d3-scale')
     const { axisLeft } = await import('d3-axis')
     const { format } = await import('d3-format')
@@ -30,6 +40,7 @@
       }
     }
 
+    selectAll('g > *').remove()
     const svg = select(chartElement)
       .append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
@@ -196,7 +207,7 @@
         return formatter(x(d))
       })
       .each(positionLabel)
-  })
+  }
 </script>
 
 <svg
