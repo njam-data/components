@@ -14,6 +14,7 @@
     bottom: 10,
     left: 60
   }
+
   export let formatter
 
   let chartElement
@@ -40,12 +41,14 @@
       }
     }
 
-    selectAll('g > *').remove()
-    const svg = select(chartElement)
-      .append('g')
-      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    const chart = select(chartElement)
+    chart.selectAll('g > *').remove()
 
-      const x = (d) => {
+    const svg = chart
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`)
+
+    const x = (d) => {
       return d.value
     }
 
