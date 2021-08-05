@@ -10,14 +10,15 @@
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
-    "svelte": "^3.34.0"
+    "svelte": "^3.34.0",
+    "svelte2tsx": "^0.4.5",
+    "typescript": "^4.3.5"
   },
   "type": "module",
   "dependencies": {
     "d3-axis": "^3.0.0",
     "d3-format": "^3.0.1",
     "d3-scale": "^4.0.0",
-    "d3-selection": "^3.0.0",
-    "svelte2tsx": "^0.4.1"
+    "d3-selection": "^3.0.0"
   }
 }
