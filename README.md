@@ -64,3 +64,6 @@ npm run build
 ```
 
 > You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
+## Potential components
+- scrollytelling https://svelte.dev/repl/3d3736e634c9404ea8ec2ef7b87e2053?version=3.42.4

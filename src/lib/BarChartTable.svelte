@@ -25,6 +25,7 @@
   })
 
   afterUpdate(async () => {
+    console.log('afterUpdate', data)
     await tick()
     await buildVisualization()
   })
